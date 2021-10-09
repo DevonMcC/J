@@ -49,6 +49,12 @@ end.
 fxrd
 )
 
+NB.* usus: usual stats: min, max, mean, standard deviation.
+usus=: 3 : 0
+   if. 0=L. y do. (]`|: @.(1<#$y))(<./,>./,mean (,`,: @.(1<#$y)) stddev) y
+   else. (<./,>./,mean,stddev)&> y end.
+)
+
 bmkSet=: 3 : 0
 smoutput 'Starting: ',":qts''
 
